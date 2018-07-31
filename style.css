@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
+body {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  overflow: hidden;
+}
+
+header {
+  background: black;
+}
+
+.header__container {
+  margin: 0 auto;
+  max-width: 90%;
+  display: flex;
+}
+
+.logo {
+  padding-bottom: 0.5em;
+    padding-top: 0.5em;
+
+  flex: 1;
+  display: flex;
+}
+
+.logo a {
+  align-items: center;
+  display: flex;
+}
+
+.contact {
+  display: flex;
+  color: #FD0B2A;
+  margin-left: auto;
+  padding: 0.5em 0.95em;
+}
+
+.contact p:first-child {
+  margin-right: 1.5em;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact .mobile {
+  margin-right: 0.5 em;
+}
+
+.nav .contact li {
+  flex-direction: row;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  padding: 0.5em 0.95em;
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.close {
+  display: none;
+  font-size: 36px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.mobile-btn {
+  display: none;
+  float: right;
+  cursor: pointer;
+}
+
+li a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+li ul li {
+  display: none;
+}
+
+ul li:hover ul li {
+  cursor: pointer;
+  display: flex;
+}
+
+ul li:hover ul {
+  border-top: 2px solid #FD0B2A;
+}
+
+ul li ul {
+  background: white;
+  flex: 1;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  left: auto;
+}
+
+ul li ul li a {
+  color: black;
+  font-weight: 300;
+  text-transform: none;
+  padding: 0.5em 0.25em;
+}
+
+a:hover {
+  color: #FD0B2A;
+}
+
+.contact {
+  align-items: center;
+}
+
+.fas {
+  color: grey;
+  margin-right: 0.5em;
+}
+
+.jumbotron {
+  background-image: url("images/desktop.png");
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: cover;
+}
+
+@media (max-width: 1200px) {
+  .container__navigation, ul, .contact  {
+    flex-direction: column;
+  }
+
+  header__container {
+    background: black;
+  }
+
+  ul li ul li {
+    transition: 200ms ease-in-out;
+  }
+
+  ul li:hover ul {
+    border: none;
+    width: 100%;
+  }
+
+  ul li:nth-child(2):hover {
+    padding: 0;
+  }
+
+  ul li:nth-child(2):hover a {
+    padding: 0.5em 0.95em;
+  }
+
+  ul li ul {
+    position: relative;
+    min-height: 0;
+  }
+
+  ul li ul li {
+    border: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    font-size: 1.2em;
+    right: 0;
+    background-color: black;
+    z-index: 3;
+    transform: translateX(400px);
+    transition: all 200ms ease-in-out;
+  }
+
+  .menu.open {
+    transform: translateX(0);
+  }
+
+  .mobile-btn {
+    display: flex;
+    font-size: 2em;
+    align-items: center;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.4);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+
+  .overlay.open {
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .contact {
+    text-align: left;
+    order: 4;
+  }
+
+  nav {
+    display: flex;
+  }
+
+  .logo {
+    background: black;
+    width: 100%;
+  }
+}
